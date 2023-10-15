@@ -1,0 +1,74 @@
+.t-calendar {
+    display: inline-block;
+    position: relative;
+}
+
+.t-calendar-drop {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--t-cor-fundo-1);
+    color: var(--t-cor-texto-1);
+    border-width: var(--t-input-border-size);
+    border-radius: var(--t-input-border-radius);
+    border-color: var(--t-cor-texto-2);
+    border-style: solid;
+}
+
+.t-calendar-header, .t-calendar-week {
+    display: flex;
+    flex-direction: row;
+    background: none;
+}
+.t-calendar-body {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    background: none;
+}
+
+.t-previous-button, .t-next-button, .t-day, .t-day-label {
+    background: none;
+    color: var(--t-cor-texto-1);
+    border: none;
+    padding: var(--t-input-padding);
+    text-align: center;
+}
+
+.t-previous-button, .t-next-button, .t-day-label {
+    width: 14.2857142857%;
+}
+
+.t-previous-button:hover, .t-next-button:hover, .t-day:hover {
+    background: var(--t-cor-fundo-2);
+}
+
+.t-month, .t-year {
+    padding: var(--t-input-padding);
+}
+
+.t-month {
+    margin-left: auto;
+}
+
+.t-year {
+    margin-right: auto;
+}
+
+.sunday {
+    color: var(--t-cor-primario-1);
+    font-weight: bold;
+}
+
+.saturday {
+    color: var(--t-cor-primario-2);
+    font-weight: bold;
+}
+
+.t-day.other-month {
+    color: var(--t-cor-texto-desabilitado);
+}
+
+.t-day.t-selected {
+    background: var(--t-cor-primario-1);
+    color: var(--t-cor-contraste-1);
+}

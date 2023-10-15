@@ -1,0 +1,30 @@
+<div class="t-calendar">
+
+    <div class="t-input-wrapper">
+        <input class="t-input" type="text" [value]="dataString()" [placeholder]="placeholder">
+    </div>
+
+    <div class="t-calendar-drop">
+        <div class="t-calendar-header">
+            <button class="t-previous-button" (click)="prev()">&lt;</button>
+            <div class="t-month">{{ monthLabel[mes] }}</div>
+            <div class="t-year">{{ ano }}</div>
+            <button class="t-next-button" (click)="next()">&gt;</button>
+        </div>
+        <div class="t-calendar-week">
+            <ng-template ngFor [ngForOf]="diasDaSemana" let-diaLabel let-i="index">
+                <div class="t-day-label" [class.sunday]="i == 0" [class.saturday]="i == 6">{{ diaLabel }}</div>
+            </ng-template>
+        </div>
+        <div class="t-calendar-body">
+            <ng-template ngFor [ngForOf]="diasCalendario" let-dia let-i="index">
+                <div class="t-day"
+                        [class.t-selected]="dia === diaSelecionado"
+                        [class.other-month]="dia.mes != mes"
+                        [class.sunday]="i % 7 == 0"
+                        [class.saturday]="i % 7 == 6"
+                        (click)="selecionar(dia)">{{ dia.dia }}</div>
+            </ng-template>
+        </div>
+    </div>
+</div>

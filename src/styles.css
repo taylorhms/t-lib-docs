@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+.dark {
+    /* Cores de destaque */
+    --t-cor-primario-1: #eeff00;
+    --t-cor-primario-2: #ffae00;
+    --t-cor-primario-3: #0eab00;
+
+    /* Cores que contrastam com a cor de destaque correspondente */
+    /* Usada nos textos de botões, por exemplo. */
+    --t-cor-contraste-1: #000000;
+    --t-cor-contraste-2: #000000;
+    --t-cor-contraste-3: #000000;
+
+    /* Cores de fundo padrão */
+    --t-cor-fundo-1: #282828;
+    --t-cor-fundo-2: #676767;
+
+    /* Cores de texto padrão */
+    --t-cor-texto-1: #ffffff;
+    --t-cor-texto-2: #bdbdbd;
+
+    /* Cores para componentes desabilitados */
+    --t-cor-fundo-desabilitado: #484848;
+    --t-cor-texto-desabilitado: #707070;
+    --t-cor-borda-desabilitado: #535353;
+
+    /* Componentes de formulários (inputs, dropdowns, etc.) */
+    --t-input-padding: .75em;
+    --t-input-border-size: 1px;
+    --t-input-border-radius: 5px;
+
+    /* Fontes */
+    --t-fonte: 'Segoe UI', sans-serif;
+    --t-fonte-titulo: var(--t-fonte);
+
+    background-color: var(--t-cor-fundo-1);
+    color: var(--t-cor-texto-1);
+}

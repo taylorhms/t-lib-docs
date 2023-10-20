@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 
 type Dia = {
@@ -23,6 +23,9 @@ export class TCalendarComponent implements OnInit {
   ano: number = this.data.getFullYear();
   diaSelecionado: Dia | null = null;
   diasCalendario: Dia[] = [];
+  dataString: string = 'dd/mm/aaaa';
+
+  isAberto = false;
 
   ngOnInit(): void {
       this.montarCalendario();
@@ -72,9 +75,59 @@ export class TCalendarComponent implements OnInit {
 
   selecionar(dia: Dia): void {
     this.diaSelecionado = dia;
+    this.dataString = `${this.diaSelecionado.dia}/${this.diaSelecionado.mes + 1}/${this.diaSelecionado.ano}`;
+    this.isAberto = false;
   }
 
-  dataString(): string {
-    return (this.diaSelecionado == null) ? 'dd/mm/aaaa' : `${this.diaSelecionado.dia}/${this.diaSelecionado.mes + 1}/${this.diaSelecionado.ano}`;
+  // dataString(): string {
+  //   return (this.diaSelecionado == null) ? 'dd/mm/aaaa' : `${this.diaSelecionado.dia}/${this.diaSelecionado.mes + 1}/${this.diaSelecionado.ano}`;
+  // }
+
+  mascarar(event: Event): void {
+    
+    setTimeout(() => {
+      let digitos = this.dataString.replace(/[^\d]/g, '');
+      let formatado = this.mdata(digitos);
+      // for (let i = 0; i < Math.min(digitos.length, 8); i++) {
+      //   if (i == 2 || i == 4) {
+      //     formatado += '/';
+      //   }
+      //   formatado += digitos.charAt(i);
+      // }
+      let s = (event.target as HTMLInputElement).selectionStart ?? 0;
+      this.dataString = formatado;
+      
+      setTimeout(() => {
+        if (s == 3 || s == 6) s++;
+        (event.target as HTMLInputElement).selectionStart = s;
+        (event.target as HTMLInputElement).selectionEnd = s;
+      }, 0);
+    }, 0);
+  }
+
+  mdata(v: string): string{
+    v=v.replace(/\D/g,"");
+    v=v.replace(/(\d{8})(\d+)/,"$1");
+    v=v.replace(/(\d{2})(\d)/,"$1/$2");
+    v=v.replace(/(\d{2})(\d)/,"$1/$2");
+
+    return v;
+  }
+
+  // Evento
+
+  clickDentro = false;
+
+  @HostListener('click')
+  onClickInside() {
+    this.clickDentro = true;
+  }
+
+  @HostListener('document:click')
+  onClickOutside() {
+    if (!this.clickDentro) {
+      this.isAberto = false;
+    }
+    this.clickDentro = false;
   }
 }

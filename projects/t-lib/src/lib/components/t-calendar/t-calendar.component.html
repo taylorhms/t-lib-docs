@@ -1,10 +1,11 @@
 <div class="t-calendar">
 
     <div class="t-input-wrapper">
-        <input class="t-input" type="text" [value]="dataString()" [placeholder]="placeholder">
+        <input class="t-input" type="text" [(ngModel)]="dataString" [placeholder]="placeholder"
+                (keydown)="mascarar($event)" (focus)="isAberto = true">
     </div>
 
-    <div class="t-calendar-drop">
+    <div class="t-calendar-drop" *ngIf="isAberto">
         <div class="t-calendar-header">
             <button class="t-previous-button" (click)="prev()">&lt;</button>
             <div class="t-month">{{ monthLabel[mes] }}</div>

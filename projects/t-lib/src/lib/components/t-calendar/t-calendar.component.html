@@ -2,7 +2,7 @@
 
     <div class="t-input-wrapper">
         <input class="t-input" type="text" [(ngModel)]="dataString" [placeholder]="placeholder"
-                (keydown)="mascarar($event)" (focus)="isAberto = true">
+                (keydown)="mascarar($event)" (click)="isAberto = true">
     </div>
 
     <div class="t-calendar-drop" *ngIf="isAberto">

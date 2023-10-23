@@ -25,6 +25,9 @@
     --t-cor-texto-desabilitado: #d3d3d3;
     --t-cor-borda-desabilitado: #d3d3d3;
 
+    /* Cores para componentes inválidos */
+    --t-cor-invalido: #d40000;
+
     /* Componentes de formulários (inputs, dropdowns, etc.) */
     --t-input-padding: .75em;
     --t-input-border-size: 1px;
@@ -51,8 +54,11 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--t-fonte-titulo);
 }
 
+/* ---------- Inputs ---------- */
+
 .t-input {
     display: block;
+    width: 100%;
     background-color: var(--t-cor-fundo-1);
     color: var(--t-cor-texto-1);
     border: var(--t-input-border-size) solid var(--t-cor-texto-2);
@@ -69,4 +75,47 @@ h1, h2, h3, h4, h5, h6 {
 
 .t-input:focus {
     border-color: var(--t-cor-primario-1);
+}
+
+/* ---------- Form Inválidos ---------- */
+
+.ng-invalid.ng-dirty > .t-input {
+    border-color: var(--t-cor-invalido);
+}
+
+/* ---------- Classes Gerais ---------- */
+
+.t-tela-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 576px) {
+    .t-tela-container {
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .t-tela-container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .t-tela-container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .t-tela-container {
+        max-width: 1100px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .t-tela-container {
+        max-width: 1320px;
+    }
 }

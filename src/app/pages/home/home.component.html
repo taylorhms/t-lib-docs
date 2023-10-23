@@ -1,0 +1,11 @@
+<div class="t-tela-container">
+    <h1>Olá, {{ formulario.get('nome')?.value || 'Anônimo' }}!</h1>
+
+    <form [formGroup]="formulario">
+        <t-input placeholder="Escreva seu nome..." formControlName="nome"></t-input>
+        <t-field-error [campo]="formulario.get('nome')" [erros]="errosArr"></t-field-error>
+        <br>
+        <t-input type="email" placeholder="Escreva seu email..." formControlName="email"></t-input>
+        <t-field-error [campo]="formulario.get('email')" [erros]="errosArr"></t-field-error>
+    </form>
+</div>

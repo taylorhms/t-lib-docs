@@ -8,4 +8,17 @@
         <t-input type="email" placeholder="Escreva seu email..." formControlName="email"></t-input>
         <t-field-error [campo]="formulario.get('email')" [erros]="errosArr"></t-field-error>
     </form>
+
+    <t-table [itens]="[{ nome: 'Taylor', email: 'taylor@gmail.com' }, { nome: 'Alex', email: 'alex@gmail.com' }]">
+        <ng-template tTemplate="header">
+            <th>Index</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+        </ng-template>
+        <ng-template tTemplate="body" let-item="item" let-i="index">
+            <td>{{i}}</td>
+            <td>{{item.nome}}</td>
+            <td>{{item.email}}</td>
+        </ng-template>
+    </t-table>
 </div>

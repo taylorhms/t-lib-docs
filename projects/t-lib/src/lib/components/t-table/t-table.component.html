@@ -1,0 +1,10 @@
+<table>
+    <tr>
+        <ng-container *ngTemplateOutlet="getTemplate('header') ?? default"></ng-container>
+    </tr>
+    <tr *ngFor="let item of itens; let index = index">
+        <ng-container *ngTemplateOutlet="getTemplate('body') ?? default; context: { item, index }"></ng-container>
+    </tr>
+</table>
+
+<ng-template #default></ng-template>

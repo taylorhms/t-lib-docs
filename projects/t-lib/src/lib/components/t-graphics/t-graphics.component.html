@@ -1,0 +1,11 @@
+<svg [attr.width]="width" [attr.height]="height" viewBox="0 0 1000 500" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <g class="item" *ngFor="let dado of dados; let i = index">
+        <rect class="barra" fill="navy" [attr.x]="calcPosicaoXBarra(i)" [attr.y]="425 - calcAlturaBarra(dado)" width="20" [attr.height]="calcAlturaBarra(dado)"/>
+        <g class="exibicao">
+            <rect fill="rgba(0, 0, 0, 0.7)" [attr.x]="calcPosicaoXBarra(i) - 20" [attr.y]="425 - calcAlturaBarra(dado) - 40" width="60" height="30"/>
+            <text [attr.x]="calcPosicaoXBarra(i) - 10" [attr.y]="425 - calcAlturaBarra(dado) - 20" fill="white">{{dado}}</text>
+        </g>
+    </g>
+
+</svg>

@@ -7,6 +7,7 @@ import { TCalendarComponent } from './components/t-calendar/t-calendar.component
 import { TFieldErrorComponent } from './components/t-field-error/t-field-error.component';
 import { TTemplateDirective } from './directives/t-template.directive';
 import { TTableComponent } from './components/t-table/t-table.component';
+import { TGraphicsComponent } from './components/t-graphics/t-graphics.component';
 
 
 
@@ -17,7 +18,8 @@ import { TTableComponent } from './components/t-table/t-table.component';
     TCalendarComponent,
     TFieldErrorComponent,
     TTemplateDirective,
-    TTableComponent
+    TTableComponent,
+    TGraphicsComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { TTableComponent } from './components/t-table/t-table.component';
     TInputComponent,
     TCalendarComponent,
     TFieldErrorComponent,
-    TTableComponent
+    TTableComponent,
+    TGraphicsComponent
   ]
 })
 export class TLibModule { }

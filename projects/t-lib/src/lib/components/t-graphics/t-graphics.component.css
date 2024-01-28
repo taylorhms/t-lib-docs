@@ -1,0 +1,11 @@
+.barra:hover {
+    fill: blue;
+}
+
+.exibicao {
+    display: none;
+}
+
+.item:hover .exibicao {
+    display: block;
+}

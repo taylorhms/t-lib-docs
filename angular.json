@@ -100,7 +100,7 @@
       "projectType": "library",
       "root": "projects/t-lib",
       "sourceRoot": "projects/t-lib/src",
-      "prefix": "lib",
+      "prefix": "t",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

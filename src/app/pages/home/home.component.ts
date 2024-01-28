@@ -16,7 +16,7 @@ export class HomeComponent {
     { erro: 'required', mensagem: 'Campo Obrigatório' },
     { erro: 'maxlength', mensagem: 'Tamanho Máximo Excedido' },
     { erro: 'minlength', mensagem: 'Muito Curto' },
-    { erro: 'email', mensagem: 'Email Inválido' },
+    { erro: 'email', mensagem: 'Email Inválido' }
   ];
 
   constructor(

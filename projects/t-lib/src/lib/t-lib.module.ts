@@ -8,6 +8,7 @@ import { TFieldErrorComponent } from './components/t-field-error/t-field-error.c
 import { TTemplateDirective } from './directives/t-template.directive';
 import { TTableComponent } from './components/t-table/t-table.component';
 import { TGraphicsComponent } from './components/t-graphics/t-graphics.component';
+import { InputMaskComponent } from './components/input-mask/input-mask.component';
 
 
 
@@ -19,7 +20,8 @@ import { TGraphicsComponent } from './components/t-graphics/t-graphics.component
     TFieldErrorComponent,
     TTemplateDirective,
     TTableComponent,
-    TGraphicsComponent
+    TGraphicsComponent,
+    InputMaskComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { TGraphicsComponent } from './components/t-graphics/t-graphics.component
     TCalendarComponent,
     TFieldErrorComponent,
     TTableComponent,
-    TGraphicsComponent
+    TGraphicsComponent,
+    InputMaskComponent
   ]
 })
 export class TLibModule { }

@@ -7,7 +7,12 @@
         <br>
         <t-input type="email" placeholder="Escreva seu email..." formControlName="email"></t-input>
         <t-field-error [campo]="formulario.get('email')" [erros]="errosArr"></t-field-error>
+
+        <t-input-mask mascara="999.999.999-99" [unmask]="false" formControlName="telefone"></t-input-mask>
+        <t-field-error [campo]="formulario.get('telefone')" [erros]="errosArr"></t-field-error>
     </form>
+
+    <pre>{{ formulario.value | json }}</pre>
 
     <t-table [itens]="[{ nome: 'Taylor', email: 'taylor@gmail.com' }, { nome: 'Alex', email: 'alex@gmail.com' }]">
         <ng-template tTemplate="header">
